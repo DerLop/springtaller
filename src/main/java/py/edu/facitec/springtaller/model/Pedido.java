@@ -14,7 +14,7 @@ public class Pedido {
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private Integer id;
 	private Date fechaToma;
 	private Date fechaEntrega;
 	private double total;
@@ -33,11 +33,11 @@ public class Pedido {
 	@OneToMany(mappedBy="pedido")
 	private List<ItemPedido> itemPedidos;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

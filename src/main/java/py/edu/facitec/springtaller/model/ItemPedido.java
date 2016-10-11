@@ -1,18 +1,15 @@
 package py.edu.facitec.springtaller.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class ItemPedido {
 	@Id
 	@GeneratedValue
-	private long id;
+	private Integer id;
 	
 	private int cantidadProducto;
 	private double subTotal;
@@ -25,11 +22,11 @@ public class ItemPedido {
 	@ManyToOne
 	private Producto producto;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
