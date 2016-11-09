@@ -24,7 +24,7 @@ public class JPAConfiguration {
 		em.setDataSource(dataSource());
 		em.setPackagesToScan(new String[]
 				//Paquete a escanear
-				{ "py.edu.facitec.springtaller.model" });
+				{ "py.edu.facitec.springtaller.model", "py.edu.facitec.springtaller.model.general" });
 		JpaVendorAdapter vendorAdapter =
 				new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);

@@ -5,25 +5,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import py.edu.facitec.springtaller.model.general.General;
+
 @Entity
-public class Gerente {
+public class Gerente extends General {
 	
-	@Id
-	@GeneratedValue
-	private Integer id;
 	private String ci;
 	private String nombre;
 	
 	@OneToOne(mappedBy="gerente")
 	private Departamento departamento;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getCi() {
 		return ci;
@@ -51,7 +43,7 @@ public class Gerente {
 
 	@Override
 	public String toString() {
-		return "Gerente [id=" + id + ", ci=" + ci + ", nombre=" + nombre + ", departamento=" + departamento
+		return "Gerente [ci=" + ci + ", nombre=" + nombre + ", departamento=" + departamento
 				+ ", toString()=" + super.toString() + "]";
 	}
 	

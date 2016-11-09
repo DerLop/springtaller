@@ -8,12 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import py.edu.facitec.springtaller.model.general.General;
+
 @Entity
-public class Departamento {
+public class Departamento extends General {
 	
-	@Id
-	@GeneratedValue
-	private Integer id;
 	private String descripcion;
 	@OneToMany(mappedBy="departamento")
 	private List<Usuario> listaUsuarios;
@@ -23,13 +22,6 @@ public class Departamento {
 	@OneToOne
 	private Gerente gerente;
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getDescripcion() {
 		return descripcion;
@@ -57,7 +49,7 @@ public class Departamento {
 
 	@Override
 	public String toString() {
-		return "Departamento [id=" + id + ", descripcion=" + descripcion + ", listaUsuarios=" + listaUsuarios
+		return "Departamento [descripcion=" + descripcion + ", listaUsuarios=" + listaUsuarios
 				+ ", gerente=" + gerente + ", toString()=" + super.toString() + "]";
 	}
 	

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import py.edu.facitec.springtaller.dao.PedidoDAO;
 import py.edu.facitec.springtaller.model.Pedido;
@@ -50,6 +51,11 @@ public class PedidoController {
 		}
 		pedidoDao.eliminar(pedidoAEliminar);
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	@RequestMapping("/form")
+	public ModelAndView formulario(){
+		return new ModelAndView("/pedido/form");
+		
 	}
 
 }

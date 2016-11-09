@@ -7,29 +7,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import py.edu.facitec.springtaller.model.general.General;
 //Significa que se creara una tabla Cliente
 @Entity
 //@Table(name"")
-public class Cliente {
+public class Cliente extends General {
 	//Identificacion de clave primaria
-	@Id
+	//@Id
 	//Generacion automatica de valor
-	@GeneratedValue
-	private Integer id;
+	//@GeneratedValue
+	//private Integer id;
 	
 	private String nombre;
 	private String correo;
 	
+	//Anotacion aplicada para ignorar el atributo de json
+	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 
 	public String getNombre() {
 		return nombre;
@@ -57,7 +57,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nombre=" + nombre + ", correo=" + correo + ", pedidos=" + pedidos
+		return "Cliente [nombre=" + nombre + ", correo=" + correo + ", pedidos=" + pedidos
 				+ ", toString()=" + super.toString() + "]";
 	}
 	
